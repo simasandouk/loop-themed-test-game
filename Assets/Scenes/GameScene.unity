@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EditorWindowContent: {fileID: 1044037068}
-  CommandBlock: {fileID: 240161413684919458, guid: 51e29a4d71313704792a3bb75de01000, type: 3}
-  LoopBlock: {fileID: 3694087130397234347, guid: e370d6e4d2a475a4e80d24ada29d51f9, type: 3}
+  CommandBlock: {fileID: 6440955196013069126, guid: 51e29a4d71313704792a3bb75de01000, type: 3}
+  LoopBlock: {fileID: 1691741432313756232, guid: e370d6e4d2a475a4e80d24ada29d51f9, type: 3}
 --- !u!1 &485468524
 GameObject:
   m_ObjectHideFlags: 0
