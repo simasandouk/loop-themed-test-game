@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggableBlockScript : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
+public class DraggableBlockScript : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -12,7 +12,7 @@ public class DraggableBlockScript : MonoBehaviour, IDragHandler, IBeginDragHandl
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        canvas = GetComponentInParent<Canvas>(); // used for correct scaling
+        canvas = GetComponentInParent<Canvas>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -29,18 +29,7 @@ public class DraggableBlockScript : MonoBehaviour, IDragHandler, IBeginDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(originalParent); // fallback if not dropped on a new spot
+        //transform.SetParent(originalParent);
         canvasGroup.blocksRaycasts = true;
-    }
-    public void OnDrop(PointerEventData eventData)
-    {
-        GameObject dropped = eventData.pointerDrag;
-        if (dropped != null)
-        {
-
-            dropped.transform.SetParent(transform.parent);
-            int index = transform.GetSiblingIndex();
-            dropped.transform.SetSiblingIndex(index); // insert at drop position
-        }
     }
 }
